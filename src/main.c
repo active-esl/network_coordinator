@@ -10,6 +10,7 @@
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
+#include <zephyr/usb/usb_device.h>
 #include <zephyr/logging/log.h>
 #include <dk_buttons_and_leds.h>
 
@@ -342,6 +343,9 @@ int main(void)
 
 	LOG_INF("Starting ZBOSS Coordinator example");
 
+	/* Enable USB */
+	usb_enable(NULL);
+
 	/* Initialize */
 	configure_gpio();
 	register_factory_reset_button(FACTORY_RESET_BUTTON);
@@ -356,7 +360,7 @@ int main(void)
 
 	/* Start Zigbee default thread */
 	zigbee_enable();
-
+	
 	LOG_INF("ZBOSS Coordinator example started");
 
 	while (1) {

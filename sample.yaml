@@ -5,10 +5,11 @@ tests:
   sample.zigbee.network_coordinator:
     build_only: true
     integration_platforms:
+      - nrf52840dongle_nrf52840 
       - nrf52840dk_nrf52840
       - nrf52833dk_nrf52833
       - nrf5340dk_nrf5340_cpuapp
       - nrf21540dk_nrf52840
-    platform_allow: nrf52840dk_nrf52840 nrf52833dk_nrf52833 nrf5340dk_nrf5340_cpuapp
+    platform_allow: nrf52840dongle_nrf52840 nrf52840dk_nrf52840 nrf52833dk_nrf52833 nrf5340dk_nrf5340_cpuapp
       nrf21540dk_nrf52840
     tags: ci_build smoke
